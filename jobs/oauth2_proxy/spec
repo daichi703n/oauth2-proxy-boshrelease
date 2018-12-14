@@ -43,3 +43,14 @@ properties:
   oauth2_proxy.cookie_secure:
     description: "enable https/http for the cookie"
     default: "false"
+  oauth2_proxy.cookie_domain:
+    description: "an optional cookie domain to force cookies to (ie: .yourcompany.com)"
+  oauth2_proxy.pass_basic_auth:
+    description: "pass HTTP Basic Auth, X-Forwarded-User and X-Forwarded-Email information to upstream"
+    default: true
+  oauth2_proxy.login_url:
+    description: "Authentication endpoint"
+  oauth2_proxy.redeem_url:
+    description: "Token redemption endpoint"
+  oauth2_proxy.validate_url:
+    description: "Access token validation endpoint"

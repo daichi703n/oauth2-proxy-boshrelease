@@ -30,10 +30,16 @@ case ${1:-help} in
               --cookie-secret="<%= p('oauth2_proxy.cookie_secret') %>" \
               --cookie-refresh="<%= p('oauth2_proxy.cookie_refresh') %>" \
               --cookie-secure="<%= p('oauth2_proxy.cookie_secure') %>" \
+              <% if_p('oauth2_proxy.cookie_domain') do |cookie_domain| %>--cookie-domain="<%= cookie_domain %>" <% end %> \
               --client-id="<%= p('oauth2_proxy.client_id') %>" \
               --client-secret="<%= p('oauth2_proxy.client_secret') %>" \
               --cookie-name="<%= p('oauth2_proxy.cookie_name') %>" \
-              --redirect-url="<%= p('oauth2_proxy.redirect_url') %>"
+              --redirect-url="<%= p('oauth2_proxy.redirect_url') %>" \
+              --pass-basic-auth="<%= p('oauth2_proxy.pass_basic_auth') %>" \
+              --provider="<%= p('oauth2_proxy.provider') %>" \
+              <% if_p('oauth2_proxy.login_url') do |login_url| %>--login-url="<%= login_url %>" <% end %> \
+              <% if_p('oauth2_proxy.redeem_url') do |redeem_url| %>--redeem-url="<%= redeem_url %>" <% end %> \
+              <% if_p('oauth2_proxy.validate_url') do |validate_url| %>--validate-url="<%= validate_url %>" <% end %>
         } >>$LOG_DIR/$COMPONENT.stdout.log \
         2>>$LOG_DIR/$COMPONENT.stderr.log
     ) &
