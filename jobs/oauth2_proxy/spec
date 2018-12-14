@@ -41,5 +41,5 @@ properties:
     description: "the OAuth Redirect URL"
     example: "https://internalapp.yourcompany.com/oauth2/callback"
   oauth2_proxy.cookie_secure:
-    description: "enable htpps/http for the cookie"
+    description: "enable https/http for the cookie"
     default: "false"
