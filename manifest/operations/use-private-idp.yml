@@ -1,0 +1,19 @@
+- type: replace
+  path: /instance_groups/name=oauth2_proxy/properties/oauth2_proxy/cookie_domain?
+  value: ((oauth2_proxy-cookie_domain))
+
+- type: replace
+  path: /instance_groups/name=oauth2_proxy/properties/oauth2_proxy/provider?
+  value: ((oauth2_proxy-provider))
+
+- type: replace
+  path: /instance_groups/name=oauth2_proxy/properties/oauth2_proxy/login_url?
+  value: ((oauth2_proxy-login_url))
+
+- type: replace
+  path: /instance_groups/name=oauth2_proxy/properties/oauth2_proxy/redeem_url?
+  value: ((oauth2_proxy-redeem_url))
+
+- type: replace
+  path: /instance_groups/name=oauth2_proxy/properties/oauth2_proxy/validate_url?
+  value: ((oauth2_proxy-validate_url))
